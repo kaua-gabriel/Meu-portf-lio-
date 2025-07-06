@@ -49,7 +49,7 @@ section {
 /* Títulos */
 h2 {
   font-size: 2.5rem;
-  color: #D5D5D5;
+  color: #fff;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -258,7 +258,7 @@ header {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
-  color: #ffffff; /* ou outra cor clara, dependendo do fundo */
+  color: #fff; /* ou outra cor clara, dependendo do fundo */
 }
 
 .habilidade-item {
@@ -417,7 +417,6 @@ header {
 
 
 /* Classe .galeria */
-/* Classe .galeria */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -462,16 +461,6 @@ header {
   max-width: 90%;
   max-height: 80vh;
   border-radius: 5px;
-}
-
-.fechar {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
 }
 
 
@@ -698,4 +687,4 @@ header {
     width: 180px;
     gap: 8px;
   }
-}
+       }
