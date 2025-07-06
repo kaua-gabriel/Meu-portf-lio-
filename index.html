@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+
+    <link rel="shortcut icon" href="img/IconeControle.svg">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  
+<div id="particles-js"></div>
+    <header>
+        <div class="perfil">
+          
+            <h1>Kauã Gabriel</h1>
+            <h3>Designer Criativo com Foco em Mídias Visuais e Digitais</h3>
+            <p class="info">Sou estudante de jogos digitais e tenho aprendido muitas ferramentas de design para
+                transformar minhas ideias em algo mais real e interativo, como personagens e ambientes, tornando assim
+                as experiências mais imersivas em uma realidade diferente.</p>
+<div class="card">
+  
+  <!-- instagram -->
+   <a href="https://www.instagram.com/kaa_gab?igsh=MmZnbjV3a3oxdjlw" class="socialContainer containerOne">
+  <img src="img/instagram.svg" alt="icon do Instagram" />
+    </a> 
+    
+  <!-- linkedin -->
+  <a href="https://linkedin.com/in/kaua-gab" class="socialContainer containerTwo">
+  <img src="img//linkedin.svg" alt="" />
+    </a>                 
+                   
+  <!-- whatsapp -->
+  <a href="https://wa.me/5511949037401?text=Oi%21%20Vim%20pelo%20seu%20portfolio%20%F0%9F%98%84" class="socialContainer containerThree">
+  <img src="img/whatsapp.svg" alt="" />
+    </a>  
+    
+    <!-- currículo -->
+  <a href="https://bybeauty.my.canva.site/curr-culo-com-foto-kg" class="socialContainer containerFour">
+  <img src="img/currículo.svg" alt="" />
+    </a>            
+
+</div>
+</div>
+
+
+<section class="habilidades">
+        <h2>Habilidades</h2><br>
+        
+<!-- HTML -->
+<img src="img/html5.svg" alt="HTML" />
+
+<!-- CSS -->
+<img src="img/css3.svg" alt="CSS" />
+
+<!-- JavaScript -->
+<img src="img/javascript.svg" alt="javascript" />
+
+<!-- Figma -->
+ <img src="img/figma.svg" alt="figma" />
+
+<!-- Unity -->
+<img src="img/unity.svg" alt="unity" />
+
+<!-- C# -->
+<img src="img/csharp.svg" alt="c#" />
+
+<!-- Photoshop -->
+<img src="img/Photoshop.svg" alt="Photoshop" />
+
+<!-- illustrator -->
+<img src="img/illustrator.svg" alt="illustrator" />
+
+<!-- Maya -->
+<img src="img/maya.svg" alt="maya" />
+
+    </section>
+
+<section class="jogos-section">
+        <h2>Jogos Disponíveis</h2>
+        
+        <p>Explore o sistema solar e seus planetas</p>
+        <a href="https://kaua-gabriel.github.io/Sistema-Solar/" class="btn" target="_blank">× Sistema Solar ×</a>
+        
+        <p>Se precisar de uma lista para compras</p>
+        <a href="https://kaua-gabriel.github.io/Lista-De-Compras/" class="btn" target="_blank">× Lista De Compras ×</a>
+        
+        <p>Jogo da memória</p>
+        <a href="https://kaua-gabriel.github.io/jogo-da-mem-ria/" class="btn" target="_blank">× Jogo Da Memória ×</a>
+        
+ </section>
+    
+<section class="projeto-atual">
+    <h2>Projeto Atual</h2>
+    
+    <span>Ainda não disponível</span>
+ <button class="btn">× PLAY ×</button>
+
+    <p class="descricao">
+        • <strong>Murmúrios da Floresta</strong> é um jogo 3D para PC e VR. O jogador controla um sobrevivente de um acidente aéreo em uma floresta hostil, buscando recursos, construindo abrigo e enfrentando ameaças naturais enquanto lida com o isolamento.
+    </p>
+    <p class="ferramentas">
+        - Feito com Photoshop, Maya, Unity e C#.
+    </p>
+
+    
+    <div class="galeria">
+        <img src="img/modelos3D.png" alt="Cena do jogo murmúrios da floresta" class="imagem">
+        
+        <img src="img/rigging.png" alt="Cena do jogo murmúrios da floresta" class="imagem">
+        
+        <img src="img/texturização.png" alt="Cena do jogo murmúrios da floresta" class="imagem">
+        
+         <img src="img/personagem.png" alt="Cena do jogo murmúrios da floresta" class="imagem">
+    </div>
+</section>
+ 
+
+<section class="artes-section">
+  <h2>Arte</h2>
+
+  <div class="artes-container">
+    <div class="cartas"><img src="img/menina ciborgue.png" alt="menina ciborgue"></div>
+    <div class="cartas"><img src="img/astronauta.png" alt="Um astronauta no vácuo do espaço"></div>
+    <div class="cartas"><img src="img/robô azul.png" alt="um robô azul"></div>
+    <div class="cartas"><img src="img/raposa.png" alt="Raposa"></div>
+    <div class="cartas"><img src="img/gato com chá.png" alt="Gato segurando um Chá"></div>
+    <div class="cartas"><img src="img/MeninaCosmo.png" alt="menina no cosmos"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="imagem ampliada" />
+</div>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+
+  document.querySelectorAll(".cartas img").forEach(img => {
+    img.addEventListener("click", () => {
+      if (window.innerWidth <= 600) { // ativa só em celular
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      }
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none"; // fecha ao clicar fora da imagem
+  });
+</script>
+
+<script>
+  particlesJS('particles-js', {
+    "particles": {
+      "number": {
+        "value": 80
+      },
+      "size": {
+        "value": 2
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "speed": 1
+      }
+    }
+  });
+</script>
+</body>
+<footer>
+    <p>© 2024 Kauã Gabriel</p>
+</footer>
+
+</html>
