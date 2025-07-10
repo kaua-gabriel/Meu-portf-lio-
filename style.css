@@ -32,8 +32,8 @@ section {
   box-shadow: 0 2px 2px rgba(195, 192, 192, 0.1);
   position: relative;
   
-  /*neon da section*/
-/* box-shadow:
+  /*neon da section
+ box-shadow:
     0 0 10px rgba(0, 255, 255, 0.3),
     0 0 20px rgba(0, 255, 255, 0.3),
     0 0 30px rgba(0, 255, 255, 0.2),
@@ -45,6 +45,8 @@ section {
   -webkit-backdrop-filter: blur(10px);          /* Suporte para Safari */
   border: 1px solid rgba(255, 255, 255, 0.1);    /* Borda sutil para destacar */
 }
+
+
 
 /* Títulos */
 h2 {
@@ -183,14 +185,12 @@ header {
 }
 
 
-
 /* Classe .perfil (inclui .perfil span, .perfil .info, .perfil .imgPerf, .perfil .share) */
-
 .perfil {
   width: 30%;
   height: 50%;
   margin: 0 auto;
-  background-color: rgba(33, 33, 33, 0.7); /* fundo meio transparente */
+  background-color: rgba(33, 33, 33, 0.7); 
   transition: 1s ease-in-out;
   clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
   border-top-right-radius: 10px;
@@ -201,6 +201,95 @@ header {
   padding: 20px;
   box-sizing: border-box;
 }
+
+/*botão neon*/
+.neon-trigger {
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.07);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 4px #0ff);
+  box-shadow:
+    0 0 4px rgba(0, 255, 255, 0.3),
+    0 4px 10px rgba(0, 255, 255, 0.15);
+  animation: neonPulse 3s infinite ease-in-out;
+}
+
+.neon-trigger:focus {
+  outline: none;
+  box-shadow:
+    0 0 8px rgba(0, 255, 255, 0.5),
+    0 0 16px rgba(0, 255, 255, 0.4),
+    0 0 24px rgba(0, 255, 255, 0.3),
+    0 0 32px rgba(0, 255, 255, 0.2);
+  filter: drop-shadow(0 0 10px #0ff);
+  animation: none;
+}
+
+.neon-trigger:hover {
+  background: rgba(0, 255, 255, 0.18);
+  transform: scale(1.10);
+  filter: drop-shadow(0 0 12px #0ff) brightness(1.1);
+  box-shadow:
+    0 0 12px rgba(0, 255, 255, 0.5),
+    0 6px 14px rgba(0, 255, 255, 0.3);
+  animation: none;
+}
+
+.neon-trigger:active {
+  transform: scale(0.9);
+  box-shadow: inset 0 3px 8px rgba(0, 255, 255, 0.4);
+  filter: brightness(0.85);
+  animation: none;
+}
+
+.neon-trigger img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.neon-ativa {
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 20px rgba(0, 255, 255, 0.45),
+    0 0 30px rgba(0, 255, 255, 0.35),
+    0 0 40px rgba(0, 255, 255, 0.25),
+    inset 0 0 10px rgba(0, 255, 255, 0.15);
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  background: rgba(0, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    box-shadow 0.4s ease-in-out,
+    border 0.4s ease-in-out,
+    background 0.4s ease-in-out;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 4px rgba(0, 255, 255, 0.3),
+      0 4px 10px rgba(0, 255, 255, 0.15);
+    filter: drop-shadow(0 0 4px #0ff);
+  }
+  50% {
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 6px 18px rgba(0, 255, 255, 0.3);
+    filter: drop-shadow(0 0 10px #0ff);
+  }
+}
+
 
 .perfil span {
   font-weight: bold;
@@ -242,7 +331,6 @@ header {
 .perfil a:hover {
   color: red;
 }
-
 
 
 /* Classe .habilidades (inclui .habilidades h2, .habilidades img) */
@@ -287,8 +375,6 @@ header {
   color: #f0f0f0; /* texto mais claro */
   font-size: 14px;
 }
-
-
 
 
 /* Classe .jogos-section */
@@ -687,4 +773,4 @@ header {
     width: 180px;
     gap: 8px;
   }
-       }
+    }
