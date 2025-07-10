@@ -15,7 +15,8 @@
 
 <body>
   
-<div id="particles-js"></div>
+  <div id="particles-js"></div> 
+
     <header>
         <div class="perfil">
           
@@ -127,7 +128,7 @@
   <h3>🎮Murmúrios da Floresta</h3>
 
 <p>
-Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo, o jogador precisa sobreviver em uma floresta hostil e misteriosa. Explorar, construir abrigo, caçar e manter a saúde mental são essenciais. Enfrente animais selvagens, clima imprevisível e os efeitos do isolamento em uma experiência imersiva e desafiadora.
+  Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo, o jogador precisa sobreviver em uma floresta hostil e misteriosa. Explorar, construir abrigo, caçar e manter a saúde mental são essenciais. Enfrente animais selvagens, clima imprevisível e os efeitos do isolamento em uma experiência imersiva e desafiadora.
 </p>
 
   <div class="galeria">
@@ -145,7 +146,7 @@ Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo,
 </div>
 
 
-
+<!--Parte eo JavaScript-->
 <script>
  // abre e fechar imagens na parte do projeto atual
   const modal = document.getElementById('modalImagem');
@@ -241,17 +242,45 @@ Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo,
 
     botoesNeon.forEach(botao => {
       botao.addEventListener("click", () => {
-        secoes.forEach(secao => {
-          secao.classList.toggle("neon-ativa");
-        });
+        const isLigado = botao.classList.contains("neon-ativo");
+        botao.classList.add("neon-flicker");
+setTimeout(() => {
+  botao.classList.remove("neon-flicker");
+}, 700);
+
+        if (!isLigado) {
+          secoes.forEach(secao => {
+            secao.classList.add("neon-ativa", "neon-flicker");
+ 
+            setTimeout(() => {
+              secao.classList.remove("neon-flicker");
+            }, 600);
+          });
+
+          botao.classList.add("neon-ativo");
+        } else {
+          // Desliga direto
+          secoes.forEach(secao => {
+            secao.classList.remove("neon-ativa", "neon-flicker");
+          });
+
+          botao.classList.remove("neon-ativo");
+        }
       });
     });
   });
 </script>
+
+
+<!-- TESTE -->
+
+
+
+
 
 </body>
 <footer>
     <p>© 2024 Kauã Gabriel</p>
 </footer>
 
-</html>
+        </html>
