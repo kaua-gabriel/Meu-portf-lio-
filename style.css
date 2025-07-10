@@ -272,18 +272,41 @@ header {
     background 0.4s ease-in-out;
 }
 
-@keyframes neonPulse {
-  0%, 100% {
+@keyframes sectionFlicker {
+  0% {
+    opacity: 1;
     box-shadow:
-      0 0 4px rgba(0, 255, 255, 0.3),
-      0 4px 10px rgba(0, 255, 255, 0.15);
-    filter: drop-shadow(0 0 4px #0ff);
+      0 0 10px rgba(0, 255, 255, 0.3),
+      0 0 20px rgba(0, 255, 255, 0.2);
   }
-  50% {
+
+  20% {
+    opacity: 0;
+    box-shadow: none;
+  }
+
+  40% {
+    opacity: 1;
     box-shadow:
-      0 0 10px rgba(0, 255, 255, 0.6),
-      0 6px 18px rgba(0, 255, 255, 0.3);
-    filter: drop-shadow(0 0 10px #0ff);
+      0 0 6px rgba(0, 255, 255, 0.2),
+      0 0 12px rgba(0, 255, 255, 0.1);
+  }
+
+  60% {
+    opacity: 0;
+    box-shadow: none;
+  }
+
+  80% {
+    opacity: 1;
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.15),
+      0 0 10px rgba(0, 255, 255, 0.1);
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: none;
   }
 }
 
@@ -862,4 +885,3 @@ section.neon-flicker {
 
 /*TESTE*/
 
-    
