@@ -196,7 +196,6 @@ header {
 
 /*botão neon*/
 .neon-trigger {
-  /*serve pra tirar a caixa de seleção do botão*/
   -webkit-tap-highlight-color: transparent; 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -268,11 +267,10 @@ header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition:
-  box-shadow 0.4s ease-in-out,
-  border 0.4s ease-in-out,
-  background 0.4s ease-in-out;
+    box-shadow 0.4s ease-in-out,
+    border 0.4s ease-in-out,
+    background 0.4s ease-in-out;
 }
-
 
 @keyframes neonPulse {
   0%, 100% {
@@ -300,24 +298,20 @@ header {
       0 0 40px rgba(0, 255, 255, 0.25),
       inset 0 0 10px rgba(0, 255, 255, 0.15);
   }
-
   20% {
     opacity: 0;
     box-shadow: none;
   }
-
   40% {
     opacity: 1;
     box-shadow:
       0 0 5px rgba(0, 255, 255, 0.3),
       0 0 10px rgba(0, 255, 255, 0.2);
   }
-
   60% {
     opacity: 0;
     box-shadow: none;
   }
-
   80% {
     opacity: 1;
     box-shadow:
@@ -344,6 +338,41 @@ header {
   opacity: 0.6;
   filter: drop-shadow(0 0 2px #0ff) brightness(0.7);
   animation: neonPulse 3s infinite ease-in-out;
+}
+
+/* NOVO - brilho em seções ativadas */
+section.neon-ativa {
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.2),
+    0 0 30px rgba(0, 255, 255, 0.15),
+    0 0 40px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: box-shadow 0.4s ease, border 0.4s ease;
+}
+
+/* NOVO - piscar visual nas seções */
+section.neon-flicker {
+  animation: sectionFlicker 0.6s ease-in-out;
+}
+
+@keyframes sectionFlicker {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.3),
+      0 0 20px rgba(0, 255, 255, 0.2);
+    opacity: 1;
+  }
+  20%, 60% {
+    box-shadow: none;
+    opacity: 0.8;
+  }
+  40%, 80% {
+    box-shadow:
+      0 0 6px rgba(0, 255, 255, 0.2),
+      0 0 12px rgba(0, 255, 255, 0.1);
+    opacity: 0.6;
+  }
 }
 
 
@@ -832,3 +861,5 @@ header {
 }
 
 /*TESTE*/
+
+    
