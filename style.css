@@ -678,12 +678,12 @@ header {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-  @keyframes fadeIn {
+@keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-  }
+}
 
-  @keyframes slide-in-top {
+@keyframes slide-in-top {
     0% {
       transform: translateY(-50px);
       opacity: 0;
@@ -692,9 +692,9 @@ header {
       transform: translateY(0);
       opacity: 1;
     }
-  }
+}
 
-  .lightbox {
+.lightbox {
     display: none;
     position: fixed;
     inset: 0;
@@ -703,30 +703,25 @@ header {
     align-items: center;
     z-index: 1000;
     cursor: pointer;
-  }
+}
 
-  .lightbox img {
+.lightbox img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
     box-shadow: 0 0 15px #3E5974;
-  }
+}
 
-@media (max-width: 900px) {
+
+/*adaptador de tela*/
+@media (max-width: 1024px) {
   section {
-    margin: 20px 30px;
+    margin: 15px 40px;
     padding: 1rem;
   }
 
   .perfil {
-    width: 60%;     
-    padding: 15px;
-  }
-
-  .perfil .imgPerf {
-    width: 150px;
-    height: 150px;
-    padding: 20px;
+    width: 50%;
   }
 
   h2 {
@@ -737,108 +732,114 @@ header {
     font-size: 1.2rem;
   }
 
-  .artes-container {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.8rem;
-  }
-  
-   .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; /* espaço entre botões, opcional */
-  }
-
-  .Arte img,
-  .cartas img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .cartas {
-    height: 150px;
-    width: 150px;
-  }
-
   .btn {
-    width: 250px;
+    width: 300px;
     height: 45px;
     font-size: 15px;
   }
 
-  .habilidades img {
+  .habilidades {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+  }
+
+  .habilidade-item img {
     width: 50px;
     height: 50px;
-    margin: 10px;
   }
 }
 
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section {
-    margin: 15px 15px;
+    margin: 10px 20px;
     padding: 0.5rem;
+    position: relative;
+    overflow: visible; 
+  }
+
+  .neon-trigger {
+    position: absolute;
+    top: 45px!important;      
+    right: 45px!important;    
+    width: 45px;
+    height: 45px;
+    z-index: 9999 ;
+    background: rgba(0, 255, 255, 0.1);
+    cursor: pointer;
   }
 
   .perfil {
     width: 90%;
-    padding: 10px;
-  }
-
-  .perfil .imgPerf {
-    width: 120px;
-    height: 120px;
-    padding: 15px;
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   p {
     font-size: 1rem;
   }
 
-  .artes-container {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.6rem;
-  }
-  
   .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem; 
-  }
-
-  .Arte img,
-  .cartas img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .cartas {
-    height: 100px;
-    width: 100px;
-  }
-
-  .btn {
-    width: 180px;
+    width: 90%;
+    max-width: 280px;
     height: 40px;
+    font-size: 14px;
+  }
+
+  .habilidades {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+  }
+
+  .habilidade-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .perfil .imgPerf {
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+  }
+
+  .neon-trigger {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 240px;
+    height: 35px;
     font-size: 13px;
   }
 
-  .habilidades img {
-    width: 40px;
-    height: 40px;
-    margin: 8px;
+  .perfil .imgPerf {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
   }
 
-  .icones-redes {
-    width: 180px;
-    gap: 8px;
+  .neon-trigger {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
   }
 }
 
 /*TESTE*/
-      
+    
