@@ -19,7 +19,12 @@
     <header>
         <div class="perfil">
           
+         <button id="neonBtn" class="neon-trigger" aria-label="Ativar Neon">
+  <img src="img/botao-neon.svg" alt="Ícone de luz" />
+</button>
+          <br />
             <h1>Kauã Gabriel</h1>
+            
             <h3>Designer Criativo com Foco em Mídias Visuais e Digitais</h3>
             <p class="info">Sou estudante de jogos digitais e tenho aprendido muitas ferramentas de design para
                 transformar minhas ideias em algo mais real e interativo, como personagens e ambientes, tornando assim
@@ -48,7 +53,6 @@
 
 </div>
 </div>
-
 
 
 <section class="habilidades">
@@ -141,6 +145,7 @@ Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo,
 </div>
 
 
+
 <script>
  // abre e fechar imagens na parte do projeto atual
   const modal = document.getElementById('modalImagem');
@@ -170,7 +175,6 @@ Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo,
     }
   });
 </script>
-
 
 <section class="artes-section">
   <h2>Arte</h2>
@@ -229,6 +233,22 @@ Jogo 3D desenvolvido para PC e realidade virtual (VR). Após um acidente aéreo,
     }
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const botoesNeon = document.querySelectorAll(".neon-trigger");
+    const secoes = document.querySelectorAll("section");
+
+    botoesNeon.forEach(botao => {
+      botao.addEventListener("click", () => {
+        secoes.forEach(secao => {
+          secao.classList.toggle("neon-ativa");
+        });
+      });
+    });
+  });
+</script>
+
 </body>
 <footer>
     <p>© 2024 Kauã Gabriel</p>
