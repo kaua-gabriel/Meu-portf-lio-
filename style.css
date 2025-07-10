@@ -15,6 +15,7 @@
   box-sizing: border-box;
 }
 
+
 /* Estilos gerais */
 body {
   background: linear-gradient(135deg, #1A1A1C, #2C3E50);
@@ -204,6 +205,12 @@ header {
 
 /*botão neon*/
 .neon-trigger {
+  /*serve pra tirar a caixa de seleção do botão*/
+  -webkit-tap-highlight-color: transparent; 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
   position: absolute;
   top: 45px;
   right: 45px;
@@ -270,10 +277,11 @@ header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition:
-    box-shadow 0.4s ease-in-out,
-    border 0.4s ease-in-out,
-    background 0.4s ease-in-out;
+  box-shadow 0.4s ease-in-out,
+  border 0.4s ease-in-out,
+  background 0.4s ease-in-out;
 }
+
 
 @keyframes neonPulse {
   0%, 100% {
@@ -288,6 +296,63 @@ header {
       0 6px 18px rgba(0, 255, 255, 0.3);
     filter: drop-shadow(0 0 10px #0ff);
   }
+}
+
+/*efeito de falha no neon*/
+@keyframes neonFlicker {
+  0%, 100% {
+    opacity: 1;
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.45),
+      0 0 30px rgba(0, 255, 255, 0.35),
+      0 0 40px rgba(0, 255, 255, 0.25),
+      inset 0 0 10px rgba(0, 255, 255, 0.15);
+  }
+
+  20% {
+    opacity: 0;
+    box-shadow: none;
+  }
+
+  40% {
+    opacity: 1;
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.3),
+      0 0 10px rgba(0, 255, 255, 0.2);
+  }
+
+  60% {
+    opacity: 0;
+    box-shadow: none;
+  }
+
+  80% {
+    opacity: 1;
+    box-shadow:
+      0 0 12px rgba(0, 255, 255, 0.5),
+      0 0 24px rgba(0, 255, 255, 0.35);
+  }
+}
+
+.neon-flicker {
+  animation: neonFlicker 0.7s ease-in-out;
+}
+
+.neon-trigger.neon-ativo {
+  background: rgba(0, 255, 255, 0.25);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 16px #0ff) brightness(1.3);
+  box-shadow:
+    0 0 16px rgba(0, 255, 255, 0.7),
+    0 8px 20px rgba(0, 255, 255, 0.4);
+  animation: none;
+}
+
+.neon-trigger:not(.neon-ativo) {
+  opacity: 0.6;
+  filter: drop-shadow(0 0 2px #0ff) brightness(0.7);
+  animation: neonPulse 3s infinite ease-in-out;
 }
 
 
@@ -773,4 +838,7 @@ header {
     width: 180px;
     gap: 8px;
   }
-    }
+}
+
+/*TESTE*/
+      
